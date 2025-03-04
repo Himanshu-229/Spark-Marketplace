@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 body{
     margin: 0;
@@ -10,6 +9,7 @@ body{
     grid-template-columns: 1fr 1fr;
     font-family: "Manrope";
 }
+
 
 .container {
     position: relative;
@@ -121,6 +121,12 @@ body{
 @media (min-width:300px) and (max-width:768px){
     .container{
        display: none;
+    }
+    .signup-form{
+     flex-direction: column;
+      height: 100vh;
+      padding: 0px;
+      width: 100%;
     }
     .image{
         display: none;

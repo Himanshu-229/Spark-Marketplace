@@ -12,14 +12,23 @@ import "./Login.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [data, setData] = useState({});
+  const [error, setError] = useState({});
 
   const navigate = useNavigate();
 
   const { user, setUser } = useContext(UserDataContext);
 
+  const validate = () => {
+    let errors = {};
+    if (!email) errors.email = "Email is required";
+    if (!password) errors.password = "Password is required";
+    setError(errors);
+    return Object.keys(errors).length === 0;
+  };
+
   const submitHandler = async (e) => {
     e.preventDefault();
+    if (!validate()) return;
     const login = {
       email,
       password,
@@ -82,7 +91,10 @@ const Login = () => {
         }}
         type="email"
         placeholder="Enter your email"
-        minLength={6}/>
+        minLength={6} 
+        style={{ borderColor: error.email ? "red" : "gray" }}
+        />
+        {error.email && <small style={{ color: "red", margin: "0px" }}>{error.email}</small>}
 
         <input className="passinput"
               type="password"
@@ -92,9 +104,12 @@ const Login = () => {
                 setPassword(e.target.value);
               }}
               placeholder="Password"
-              minLength={6}
-               />
-        <button className="signup-button" style={{ marginTop: "15px" }}
+              minLength={6} 
+              style={{ borderColor: error.password ? "red" : "gray" }}
+              />
+              {error.password && <small style={{ color: "red", margin: "0px" }}>{error.password}</small>}
+    
+        <button className="signup-button" type="submit" style={{ marginTop: "15px" }}
         >Log in</button>
         
         <div style={{color:"#28A263", textDecoration:"underline",cursor:"pointer",marginTop:"10px",textAlign:"center"}}

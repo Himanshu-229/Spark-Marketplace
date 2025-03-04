@@ -71,7 +71,7 @@ const Start = () => {
       </header>
       <section className="hero">
         <div className="hero-text">
-          <h1 style={{ lineHeight:'70px', fontSize:"56px",margin:"0px"}}>The easiest place to update and share your Connection</h1>
+          <h1>The easiest place to update and share your Connection</h1>
           <p style={{fontSize:"20px", width:"70%"}}>
             Help your followers discover everything you’re sharing over the
             internet, in one simple place. They’ll thank you for it!
@@ -79,17 +79,17 @@ const Start = () => {
           <button className="cta" onClick={() => navigate("/signup")}>Get Your Free Spark</button>
         </div>
         <div className="hero-image">
-            <img style={{width:"694px", height:"490px"}} src={analytics} alt="" />
+            <img src={analytics} alt="" />
         </div>
       </section>
       <section className="analytics">
         <div className="card" style={{padding:"40px",gridColumn:"span 2"}}>
-            <div style={{display:"flex", justifyContent:"center"}}>
-                <img  src={greencard1} alt="" />
-                <img style={{marginLeft:"-50px",width:"132.95px"}} src={greencard2} alt="" />
-                <img style={{marginLeft:"-50px",width:"132.95px"}} src={greencard3} alt="" />
-                <img style={{marginLeft:"-50px",width:"132.95px"}} src={greencard4} alt="" />
-                <img style={{marginLeft:"-50px",width:"132.95px"}} src={greencard5} alt="" />
+            <div  className="card-container"style={{display:"flex", justifyContent:"center"}}>
+                <img style={{width:"20%"}} src={greencard1} alt="" />
+                <img style={{marginLeft:"-10%",width:"20%"}} src={greencard2} alt="" />
+                <img style={{marginLeft:"-10%",width:"20%"}} src={greencard3} alt="" />
+                <img style={{marginLeft:"-10%",width:"20%"}} src={greencard4} alt="" />
+                <img style={{marginLeft:"-10%",width:"20%"}} src={greencard5} alt="" />
             </div>
             
           <p style={{fontFamily:"poppins",fontSize:"26px"}}>Sell products and collect payments. It’s monetization made simple.</p>
@@ -120,7 +120,7 @@ const Start = () => {
         
         </div>
         <div className="content-preview"> 
-            <div style={{display:"flex",flexWrap:"nowrap",justifyContent:"space-around", padding:"20px"}}>
+            <div className="content-preview-images">
                 <div><img src={square} alt="" /></div>
                 <div><img src={square1} alt="" /></div>
                 <div><img src={square2} alt="" /></div>
@@ -131,7 +131,7 @@ const Start = () => {
    
      <section>
          <div style={{display:"flex", justifyContent:"space-between",margin:"30px 0px"}}>
-            <div style={{fontSize:"48px",}}><p style={{margin:"0px"}}>Here’s what our <span style={{color:"#1DA35E"}}>customer</span><br /> has to say</p></div>
+            <div className='customer-container'><p style={{margin:"0px"}}>Here’s what our <span style={{color:"#1DA35E"}}>customer</span><br /> has to say</p></div>
             <div>
                 <span>
                     <img src="" alt="" />
@@ -174,8 +174,8 @@ const Start = () => {
       </section>
       <footer className="footer">
         <div className="footer-buttons">
-          <button className="login">Log in</button>
-          <button className="signup" onClick={() => navigate("/signup")}>Sign up free</button>
+          <button className="signup-start" onClick={() => navigate("/login")}>Log in</button>
+          <button className="signup-start" onClick={() => navigate("/signup")}>Sign up free</button>
         </div>
         <div className="footer-links">
           <div>

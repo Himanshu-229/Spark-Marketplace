@@ -191,12 +191,8 @@ const UserLinks = () => {
           </div>
           
           <div className="profilecont">
-            <div className="profile" onClick={toggleDropdown}>
-              <div className="profile">
-            <span>
-                <img style={{width:"30px",height:"30px",backgroundColor:"gray", borderRadius:"50%", marginRight:"8px"}}  src="" alt="" /></span>
-              <p style={{margin:"4px"}}>{name}</p>
-        </div>
+          <div className="profile" onClick={toggleDropdown}>
+              <h1 className="usertext">{name.trim().substring(0, 2)}</h1>
             </div>
             {isDropdownVisible && (
               <div className="profile-dropdown">

@@ -35,6 +35,7 @@ body {
     align-items: center;
   }
   
+  
   .signup-start,.cta {
     background-color: #28A263;
     color: white;
@@ -67,6 +68,15 @@ body {
     align-items: center;
     justify-content: center;
   }
+  .hero-image img{
+    width:694px;
+    height:490px;
+  }
+  .hero-text h1{
+    line-height: 70px;
+    font-size:56px;
+    margin:0px;
+ }
   
   
   
@@ -90,6 +100,9 @@ body {
     font-weight: bold;
     color: #04a96d;
   }
+  .customer-container{
+    font-size: 48px;
+  }
   
   /* Content Section */
   .content-section {
@@ -106,6 +119,12 @@ body {
     border-radius: 20px;
     padding: 20px 30px;
     grid-column: span 2;
+  }
+  .content-preview-images{
+    display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding: 20px;
   }
   
   /* Testimonials */
@@ -135,12 +154,35 @@ body {
       flex-direction: column;
       text-align: center;
     }
-  
-    .hero-text,
-    .hero-image {
-      width: 100%;
+    .content-preview-images img{
+      width: 80%;
     }
-  
+    .logo-start{
+      margin-left: 10px;
+      font-size: 16px;
+    }
+    .logo-start img{
+      width: 20px;
+    }
+
+    .hero-text{
+        margin-top: 60px;
+    }
+    .hero-text,.hero-image,
+    .hero-image img {
+      width: 100%;
+        height: auto;
+    }
+    .hero-text h1{
+      line-height: 40px;
+      font-size:32px;
+      margin:0px;
+   }
+   .hero-text p{
+    font-size:14px;
+    margin:15px;
+    text-align: center;
+ }
     .analytics {
       grid-template-columns: 1fr;
     }
@@ -148,7 +190,21 @@ body {
     .reviews {
       grid-template-columns: 1fr;
     }
+    .testimonial-card {
+      background: #f8f8f8;
+      padding: 20px;
+      border-radius: 8px;
+      width: 70%;
+    }
+    .signup-start{
+      padding: 7px;
+      font-size: x-small;
+    }
+    .customer-container{
+      font-size: 28px;
+    }
   }
+ 
 
   .testimonials {
     width: 90%;
@@ -158,12 +214,8 @@ body {
     gap: 20px;
   }
   
-  .testimonial-card {
-    background: #f8f8f8;
-    padding: 20px;
-    border-radius: 8px;
-  }
   
+
  
 .integrations {
     text-align: center;
@@ -246,5 +298,5 @@ body {
     font-size: 24px;
   }
   
-  
+
   

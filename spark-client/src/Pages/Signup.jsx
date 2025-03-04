@@ -17,8 +17,7 @@ const Signup = () => {
   const [error, setError] = useState("");
   const [mobile, setMobile] = useState("");
   
-  const [isValid, setIsValid] = useState(false);
-
+ 
   const navigate = useNavigate();
   const { setUser } = useContext(UserDataContext);
 
@@ -32,6 +31,19 @@ const Signup = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    const newErrors = {};
+
+    if (!username) newErrors.username = "Name is required";
+    if (!email) newErrors.email = "Email is required";
+    if (!mobile) newErrors.mobile = "Mobile number is required";
+    if (!password) newErrors.password = "Password is required";
+    if (!confirmpass) newErrors.confirmpass = "Confirm password is required";
+    if (password !== confirmpass) newErrors.confirmpass = "Passwords do not match";
+
+    if (Object.keys(newErrors).length > 0) {
+      setError(newErrors);
+      return;
+    }
 
     const newUser = { username, email, mobile, password };
 
@@ -71,10 +83,7 @@ const Signup = () => {
     setConfirmpass("");
   };
 
-  const getBorderColor = () => {
-    if (!confirmpass) return "black";
-    return password === confirmpass ? "green" : "red";
-  };
+ 
   return (
     <div className="signup-container">
     <div style={{ display: "flex", justifyContent: "center", marginLeft: "30px", width: "10%" }}>
@@ -104,7 +113,7 @@ const Signup = () => {
            type="text"
            placeholder="Name"
            minLength={3}
-          style={{ borderColor: error.Name ? "red" : "gray" }}
+           style={{ borderColor: error.email ? "red" : "gray" }}
         />
       {error.username && (
       <span style={{ color: "red", fontSize: "10px", margin: "-6px 0px" }}>
@@ -134,7 +143,7 @@ const Signup = () => {
            onChange={(e) => {
              setMobile(e.target.value);
            }}
-          style={{ borderColor: error.mobile ? "red" : "gray" }}
+           style={{ borderColor: error.email ? "red" : "gray" }}
         />
       {error.mobile && (
       <span style={{ color: "red", fontSize: "10px", margin: "-6px 0px" }}>
@@ -147,7 +156,7 @@ const Signup = () => {
           value={password}
           onChange={(e) => {
             setPassword(e.target.value);}}
-          style={{ borderColor: getBorderColor() }}
+            style={{ borderColor: error.email ? "red" : "gray" }}
           placeholder="Password"
         />
       {error.password && (
@@ -160,7 +169,7 @@ const Signup = () => {
           type="password"
           name="confirmPassword"
           placeholder="Confirm Password"
-          style={{ borderColor: getBorderColor() }}
+          style={{ borderColor: error.email ? "red" : "gray" }}
           value={confirmpass}
           onChange={(e) => {
             setConfirmpass(e.target.value);}}

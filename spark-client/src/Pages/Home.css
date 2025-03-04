@@ -3,26 +3,17 @@
   display: grid;
   grid-template-columns: 1fr 3fr;
   position: relative;
-}
-.sidebar{
   height: 100vh;
-  background-color: #fff;
-  position: relative;
+  overflow: hidden;
 }
 
 .sidebar-items-container {
-  background-color: #ffffff;
+  background-color: #fff;
+  border-right: 3px solid #f0f0f0;
+  padding: 1rem 0;
+  height: 100%;
+  overflow: hidden;
   box-sizing: border-box;
-}
-.logo-dashboard {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 27px;
-    font-weight: bold;
-    justify-content: center;
-    background: #fff;
-    padding-top: 24px;
 }
 
 .sidebar-logo {
@@ -31,10 +22,18 @@
   width: 80%;
   height: 5.9rem;
   margin: 0 auto;
-  padding: 30px;
+}
+.logo-dashboard{
+  padding: 20px;
+  font-size: xx-large;
+  font-weight: 700;
+  line-height: 1.5;
+  gap: 1rem;
   background-color: #fff;
 }
-
+.logo-dashboard img{
+  width: 40px;
+}
 .logos {
   margin: 1rem 0 2.5rem 0;
   display: flex;
@@ -53,36 +52,37 @@
 .sidebar-items {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 1rem;
-  margin: 1rem 0 2rem 0
+  margin: 0 0 1rem 0;
 }
 
 .sidebar-item {
+  font-weight: 600;
   font-size: 1rem;
   display: flex;
   flex-direction: row;
   gap: 1rem;
   align-items: center;
-  width: 92%;
   padding: 0 1rem;
   border: none;
   background-color: #fff;
-  border-radius: 0.5rem;
 }
 
 .texts {
   margin: 0;
   padding: 0.5rem 0;
-  font-size: medium;
-  font-weight: 500;
 }
 
 .icons {
   font-size: 1.5rem;
 }
 
-
+.settings {
+  border-top: solid 3px #f6f6f9;
+  border-bottom: solid 3px #f6f6f9;
+  margin: 1.5rem 0;
+  padding: 1.5rem 0;
+}
 
 .navbar {
   display: flex;
@@ -98,25 +98,36 @@
 }
 
 .profilecont {
+  position: relative;
   display: inline-block;
 }
 
+.profilecont {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+  height: 86%;
+}
 
-
-.profile{
-  position: absolute;
-    bottom: 12px;
-    display: flex;
-    left: 10%;
-    border-radius: 20px;
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background: #fde48a;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .profile:hover {
   transform: scale(1.1);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 .usertext {
-  font-family: "poppins";
   font-size: 18px;
   font-weight: 700;
   color: #923E0E;
@@ -136,36 +147,33 @@
 
 .logout {
   position: absolute;
-  right: 5rem;
-  top:2rem;
-  font-family: "Manrope";
+  right: 4rem;
   font-weight: 600;
-  background-color: #b3b3b3;
-  color: #fff;
+  background-color: #fff;
+  color: #878b89;
+  border: solid 1px #e0e0e0;
+  border-radius: 4px;
   padding: 0.5rem 2rem;
   font-size: 14px;
-  border: none;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
   transition: background-color 0.2s ease;
 }
 
 .logout:hover {
+  background-color: #333;
   color: #fff;
 }
 
 .sidebar-item {
   padding: 10px;
   color: #333;
-  font-weight: 200;
   text-decoration: none;
 }
 
 .sidebar-item.active {
   background-color: #f4f4f4;
   color: #28A263;
-  width: 95%;
+  font-weight: bold;
 }
 
 .dashboard {
@@ -188,49 +196,35 @@
 }
 
 .device {
-  font-family: "Manrope";
   font-weight: 600;
   font-size: 1rem;
-  color: #fff;
+  color: #28A263;
   margin: 1rem 0 0 0;
 }
 
 .clickdashboard {
+  border: solid 1px #878b89;
   border-radius: 0.5rem;
   padding: 0 0 0 1rem;
-  background-color: #21AF66;
 }
 
 .devicegraph {
+  border: solid 1px #878b89;
   border-radius: 0.5rem;
   padding: 0 0 0 1rem;
-  background-color: #94E9B8;
 }
 
 .scroll-container {
   overflow-y: auto;
 }
 .clicksm{
-  color: #21AF66;
-  
+  color:#28A263;
+  margin: 3rem 0px;
 }
 
-@media (min-width: 300px) and (max-width:1020px) {
+@media (min-width: 300px) and (max-width:727px) {
   .maintexts{
     margin-top: 10px;
-  }
-  .logo-dashboard{
-        display: flex;
-        justify-content: flex-start;
-        padding-left: 20px;
-        padding-bottom: 10px;
-  }
-  .profile{
-    position: absolute;
-    bottom: 12px;
-    display: flex;
-    right: 0px;
-}
   }
   .mainbody {
     display: flex;
@@ -238,9 +232,6 @@
     height: auto;
     overflow: auto; /* Allow other content to scroll */
   }
-.sidebar{
-  height: 60px;
-}
 
   .sidebar-logo {
     display: none; /* Hide the logo on mobile and tablet */
@@ -302,7 +293,7 @@
   }
 }
   
-@media (min-width:768px) and (max-width:1020px) {
+@media (min-width:768px) and (max-width:1023px) {
   .mainbody {
     display: flex;
     flex-direction: column;
@@ -313,6 +304,13 @@
   .sidebar-logo {
     display: none; /* Hide the logo on mobile and tablet */
   }
+  .profilecont {
+    position: fixed;
+    top: 1.5rem;
+    height: 10%;
+    right: 15px;
+    z-index: 1;
+}
 
   .sidebar-items-container {
     display: flex;
@@ -366,7 +364,7 @@
     margin-bottom: 20px;
   }
 }
-@media (max-width: 1024px) and (max-width:1200px) {
+@media (min-width:1024px) and (max-width:1200px) {
   .searchbar{
     grid-template-columns: 1.5fr 1.5fr 0.3fr;
   }
