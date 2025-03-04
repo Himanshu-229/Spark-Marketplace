@@ -215,9 +215,22 @@
   
 }
 
-@media (min-width: 300px) and (max-width:727px) {
+@media (min-width: 300px) and (max-width:1020px) {
   .maintexts{
     margin-top: 10px;
+  }
+  .logo-dashboard{
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 20px;
+        padding-bottom: 10px;
+  }
+  .profile{
+    position: absolute;
+    bottom: 12px;
+    display: flex;
+    right: 0px;
+}
   }
   .mainbody {
     display: flex;
@@ -225,6 +238,9 @@
     height: auto;
     overflow: auto; /* Allow other content to scroll */
   }
+.sidebar{
+  height: 60px;
+}
 
   .sidebar-logo {
     display: none; /* Hide the logo on mobile and tablet */
@@ -286,7 +302,7 @@
   }
 }
   
-@media (min-width:768px) and (max-width:1023px) {
+@media (min-width:768px) and (max-width:1020px) {
   .mainbody {
     display: flex;
     flex-direction: column;
@@ -350,7 +366,7 @@
     margin-bottom: 20px;
   }
 }
-@media (min-width:1024px) and (max-width:1200px) {
+@media (max-width: 1024px) and (max-width:1200px) {
   .searchbar{
     grid-template-columns: 1.5fr 1.5fr 0.3fr;
   }

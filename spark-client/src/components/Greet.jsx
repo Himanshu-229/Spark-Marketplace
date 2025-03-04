@@ -35,12 +35,7 @@ const Greet = () => {
   return (
     <div className="greetcontainer">
       <div className="greet">
-        <span
-          className="user-avatar"
-          style={{ fontSize: "2rem", marginLeft: "10px" }}
-        >
-          {/* {avatarUrl} Emoji avatar */}
-        </span>
+        
         <div>
           <h1 className="headings">
            Hi {name} !

@@ -144,12 +144,13 @@ const Home = () => {
     <div className="mainbody">
       <div className="vr"></div>
       <div className="sidebar">
-        <div className="sidebar-items-container">
-        <div className="logo-dashboard">
+      <div className="logo-dashboard">
         <span><img src={logo} alt="" /></span>
         <span>Spark</span>
      
         </div>
+        <div className="sidebar-items-container">
+        
           <div className="sidebar-items">
             <Link to="/home" className={getSidebarItemClass("/home")}>
               <Dashboardss />
