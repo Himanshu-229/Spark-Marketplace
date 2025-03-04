@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-family: "Manrope";
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.logo {
+    position: absolute;
+    top: 1.5rem;
+    left: 1rem; 
+    width: 20%;
+    z-index: 1; 
+}
+
+.maincontainer{
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+.top {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding-right: 1rem;
+}
+
+.loginbtn{
+    background-color: #1b48da;
+    border: none;
+    padding:  0.5rem 1rem;
+    border-radius: 0.45rem;
+    font-family: "Manrope";
+    color:white;
+    font-weight: 600;
+}
+
+.signupbtn{
+    background-color: white;
+    border: none;
+    padding:  0.5rem 1rem;
+    border-radius: 0.45rem;
+    font-family: "Manrope";
+    color:black;
+    font-weight: 600;
+}
+
+.divcont{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.joinus{
+    display: flex;
+    width: 80%;
+    font-weight: 600;
+    font-size: 1rem;
+    margin: auto;
+}
+
+.formcontainer{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap:1rem;
+    margin: auto;
+}
+
+.emailinput,.passinput{
+    max-height: 5rem;
+    border:solid 1px;
+    border-radius: 0.3rem;
+    padding: 0.4rem 1rem;
+}
+
+.register{
+    background-color: #1b48da;
+    color:#fff;
+    font-family: "Manrope";
+    font-weight: 600;
+    padding: 0.8rem 1rem;
+    border-radius: 0.3rem;
+    border: none;
+}
+
+.signup{
+    font-size: 0.8rem;
+    font-weight: 600;
+   text-align: center;
+   margin: 0;
+}
+.logos1{
+    display: none;
+}
+.signupline{
+    text-decoration: none;
+    color: #1b48da;
+}
+@media (min-width:300px) and (max-width:768px){
+    .container{
+       display: none;
+    }
+    .image{
+        display: none;
+    }
+    .logos1{
+        position: absolute;
+        display: inline;
+        width: 20%;
+        top:1.8rem;
+        left:2rem
+    }
+    .main{
+        position: relative;
+        display: block;
+        height: 100vh;
+        width: 100%;
+    }
+    .maincontainer{
+        gap: 2rem;
+        height: 100vh;
+    }
+    
+}

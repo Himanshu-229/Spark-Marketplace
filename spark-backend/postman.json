@@ -1,0 +1,465 @@
+{
+    "info": {
+        "name": "Linktree-like Mini Link Management Platform",
+        "_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+        "description": "Postman collection for the Linktree-like backend endpoints",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Landing Page",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/api/user/landing",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "user",
+                        "landing"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Register User",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"username\": \"testuser\",\n  \"email\": \"test@example.com\",\n  \"mobile\": 1234567890,\n  \"password\": \"Password123\"\n}"
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/api/user/register",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "user",
+                        "register"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Login User",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"Password123\"\n}"
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/api/user/login",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "user",
+                        "login"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get User Profile",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/api/user/profile",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "user",
+                        "profile"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Create Link",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"originalLink\": \"https://www.example.com\",\n  \"title\": \"My Example Link\",\n  \"expirationdate\": \"2025-12-31T00:00:00.000Z\"\n}"
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/api/user/link",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "user",
+                        "link"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Update Link",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"originalLink\": \"https://www.example2.com\",\n  \"title\": \"Updated Title\",\n  \"expirationdate\": \"2026-01-01T00:00:00.000Z\"\n}"
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/api/user/link/{{linkId}}",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "user",
+                        "link",
+                        "{{linkId}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Delete Link",
+            "request": {
+                "method": "DELETE",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/api/user/link/{{linkId}}",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "user",
+                        "link",
+                        "{{linkId}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get All Links (Paginated)",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/api/user/link?page=1&limit=8",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "user",
+                        "link"
+                    ],
+                    "query": [
+                        {
+                            "key": "page",
+                            "value": "1"
+                        },
+                        {
+                            "key": "limit",
+                            "value": "8"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Update Appearance Settings",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"theme\": \"dark\",\n  \"buttonDesign\": \"rounded\",\n  \"layout\": \"grid\"\n}"
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/api/user/appearance",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "user",
+                        "appearance"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Analytics",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/api/user/analytics",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "user",
+                        "analytics"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Update User Profile",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"username\": \"updatedUser\",\n  \"email\": \"updated@example.com\",\n  \"mobile\": 9876543210,\n  \"profilePicture\": \"https://example.com/profile.jpg\",\n  \"bannerImage\": \"https://example.com/banner.jpg\",\n  \"socialLinks\": [\"https://twitter.com/user\"],\n  \"shopLinks\": [\"https://shop.example.com\"]\n}"
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/api/user/update",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "user",
+                        "update"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Change Password",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"oldPassword\": \"Password123\",\n  \"newPassword\": \"NewPassword123\"\n}"
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/api/user/settings/password",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "user",
+                        "settings",
+                        "password"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Logout",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/api/user/logout",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "user",
+                        "logout"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Public Redirect (Link)",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/api/user/{{linkId}}",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "user",
+                        "{{linkId}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Search Links",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/api/user/search?query=example",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "user",
+                        "search"
+                    ],
+                    "query": [
+                        {
+                            "key": "query",
+                            "value": "example"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Delete User and Links",
+            "request": {
+                "method": "DELETE",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/api/user/delete",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "user",
+                        "delete"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ],
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:3000"
+        },
+        {
+            "key": "token",
+            "value": ""
+        },
+        {
+            "key": "linkId",
+            "value": ""
+        }
+    ]
+}

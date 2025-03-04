@@ -1,0 +1,142 @@
+.settings-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem;
+        background-color: #fff;
+        width: 80%;
+        margin-top: 5%;
+        border-radius: 15px;
+        justify-content: center;
+        position: relative;
+}
+
+.settings-form input {
+    width: 60%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+.settings-container {
+    font-family: "poppins", sans-serif;
+    
+}
+
+
+
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content:end;
+    gap: 2rem;
+    width: 20%;
+    
+}
+
+.save-btn{
+    padding: 10px;
+    background: #28A263;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+  
+
+.crosss {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #aaa; 
+    transition: color 0.2s ease;
+}
+
+.crosss:hover {
+    color: #000; 
+}
+
+.delete-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.delete-text {
+    font-family: "Manrope", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #000;
+    text-align: center; 
+    margin-top: 0; 
+}
+
+.delete-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.dltbtn {
+    font-family: "Manrope", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.8rem 4.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: #1b48da;
+    color: white;
+}
+
+.dltbtn:hover {
+    background-color: #163bb7;
+    transform: scale(1.05); 
+}
+
+.dltbtn1 {
+    font-family: "Manrope", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.8rem 4.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: #ececee;
+    color: black;
+}
+
+.dltbtn1:hover {
+    background-color: #d9d9db; /* Slightly darker gray on hover */
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+@media( min-width:767px) and (max-width:1023px) {
+    .delete-dropdown{
+        top:30%;
+        right: 20%;
+    }
+}
+@media (max-width:767px) {
+    .settings-container{
+        margin: 0;
+        width: 100%;
+    }
+    .btn-container{
+        width: 100%;
+        margin-bottom: 4rem;
+    }
+    .anthing{
+        padding: 10px 35px;
+    }
+}
